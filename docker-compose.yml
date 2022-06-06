@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  ts-service:
+    build: .
+    volumes:
+      - .:/app
+      - app/node_modules
+    command: yarn dev

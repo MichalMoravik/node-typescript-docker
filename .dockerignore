@@ -1,0 +1,8 @@
+# ignore everything
+*
+
+# except the following
+!src
+!package.json
+!tsconfig.json
+!yarn.lock
