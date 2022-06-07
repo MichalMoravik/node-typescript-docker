@@ -16,13 +16,13 @@ Intentionally minimalistic, without any framework or additional libraries.
 
 > Removing `volumes` section from the `docker-compose.yml` file malfunctions hot reloading.
 
-##### Files
+### Files
 
 Automatic (hot) reloading is triggered when a `.ts` file is changed locally. The exact flow is visualized below.
 
 ![TypeScript-Docker-Flow](./hot-reload.png)
 
-##### Packages
+### Packages
 
 Adding packages to the running container does not trigger hot reloading. When adding a new package by using `yarn add`, do the following steps instead:
 
@@ -42,15 +42,15 @@ docker-compose stop ts-service && docker-compose rm -f ts-service && docker-comp
 
 ## Production Deploy
 
-##### container's content
+### container's content
 
-The built container in production should only include files/folders **not** ignored by the `.dockerignore` file
+The built container in production should only contain files/folders **not** ignored by the `.dockerignore` file
 
-##### docker-compose.yml
+### docker-compose.yml
 
 The `docker-compose.yml` file and `docker-compose` commands should not be used in production. This file's purpose is to ease the local development, including adding the hot reloading ability.
 
-##### command
+### command
 
 When deploying the service to production, set `yarn start` as the container's "command".
 
