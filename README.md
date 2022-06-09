@@ -4,6 +4,8 @@
 
 Intentionally minimalistic, without any framework or additional libraries.
 
+<br />
+
 ## Usage
 
 1. Use/Pull/Fork this template
@@ -11,6 +13,8 @@ Intentionally minimalistic, without any framework or additional libraries.
 3. Run `docker-compose up`
 
 > Depending on your machine, you might experience a "ts-node" error after a fresh build. Doing step #3 once again solves the issue.
+
+<br />
 
 ## Hot Reloading Explained
 
@@ -40,23 +44,32 @@ Or in one line:
 docker-compose stop ts-service && docker-compose rm -f ts-service && docker-compose build ts-service && docker-compose up ts-service
 ```
 
+<br />
+
 ## Production Deploy
 
 ### container's content
 
 The built container in production should only contain files/folders **not** ignored by the `.dockerignore` file
 
+<br />
+
 ### docker-compose.yml
 
 The `docker-compose.yml` file and `docker-compose` commands should not be used in production. This file's purpose is to ease the local development, including adding the hot reloading ability.
+
+<br />
 
 ### command
 
 When deploying the service to production, set `yarn start` as the container's "command".
 
->Examples:
-In AWS ECS: Container Definitions -> command
-In GCP Cloud Run: Container command
+Examples:
+
+- In AWS ECS: Container Definitions -> command
+- In GCP Cloud Run: Container command
+
+<br />
 
 Alternative:
 
@@ -77,6 +90,8 @@ CMD yarn "$(if [ $NODE_ENV = 'production' ] ; then echo 'start' ; else echo 'dev
 3. When deploying to production, set `NODE_ENV` environment variable to `production`
 
 > When choosing the alternative, it is **no longer** needed to set "command" in your cloud provider. Setting `CMD` in the Dockerfile (step #2) does the job for you
+
+<br />
 
 ## Errors
 
