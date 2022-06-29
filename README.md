@@ -1,4 +1,4 @@
-# TypeScript-Docker Template
+# Node-TypeScript-Docker Template
 
 🐳 Template for a simple TypeScript-Node-Docker service with hot reloading.
 
