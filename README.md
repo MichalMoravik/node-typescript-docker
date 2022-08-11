@@ -50,7 +50,8 @@ docker-compose stop ts-service && docker-compose rm -f ts-service && docker-comp
 
 ### container's content
 
-The built container in production should only contain files/folders **not** ignored by the `.dockerignore` file
+The built container in production will only contain files/folders not ignored
+by the `.dockerignore` file (wanted behaviour).
 
 <br />
 
@@ -97,10 +98,10 @@ CMD yarn "$(if [ $NODE_ENV = 'production' ] ; then echo 'start' ; else echo 'dev
 
 When you encounter an error (or unexpected behaviour) that you cannot solve:
 
-1. Remove the Docker container, image, and (just in case) valumes
+1. Remove the Docker container, image, and valumes
 
 2. Then run `docker-compose build --no-cache ts-service`
 
 3. Lastly, run `docker-compose up ts-service`
 
-In case this does not fix the error or you have any additional questions, feel free to open a GitHub issue
+In case this does not fix the error, or if you have any additional questions, feel free to open a GitHub issue
